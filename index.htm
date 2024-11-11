@@ -4,11 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title>アンの社畜Dの住処</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
 margin: 20px; /* bodyの外側の余白を指定する */
 padding: 50px 50px 50px 50px; /* bodyの内側の余白を指定する */
 }
+body {font-size: 40px;}
+
 .Header {
 position: fixed; 
 top: 0%; 
@@ -19,7 +22,38 @@ padding: 10px;
 background-color: #e6e6fa; 
 color: #000; 
 border-bottom: 3px solid #708090; 
-font-size: 5vw; 
+font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+.Header {
+position: fixed; 
+top: 0%; 
+left: 0; 
+width: 100%; 
+height: 7.5%; 
+padding: 10px; 
+background-color: #e6e6fa; 
+color: #000; 
+border-bottom: 3px solid #708090; 
+font-size: 1.5rem;
+}
+}
+
+@media (max-width: 480px) {
+.Header {
+position: fixed; 
+top: 0%; 
+left: 0; 
+width: 100%; 
+height: 7.5%; 
+padding: 10px; 
+background-color: #e6e6fa; 
+color: #000; 
+border-bottom: 3px solid #708090; 
+font-size: 1.8rem;
+}
+}
 </style>
 
 </head>
