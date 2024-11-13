@@ -63,6 +63,43 @@ place-items: center;          /* 水平・垂直方向ともに中央揃え */
 font-size: 1.8rem;
 }
 }
+
+.carousel-container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel img {
+            width: 100%;
+            display: block;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
 </style>
 
 </head>
@@ -71,6 +108,47 @@ font-size: 1.8rem;
 <CENTER><a href="https://ataro-qqq.github.io/SOEI-SC-1-RP-main-1-2024-02-26/"><img src="A太郎の探求サイト デザイン 1-1.png" width="756" height="123"></a></CENTER>
 </BODY>
 <body><br></BODY>
+<body>
+
+<div class="carousel-container">
+    <div class="carousel">
+        <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x400?text=Image+1" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x400?text=Image+2" alt="Image 2">
+        </div>
+        <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x400?text=Image+3" alt="Image 3">
+        </div>
+    </div>
+    <div class="carousel-controls">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    const carousel = document.querySelector('.carousel');
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    });
+
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+</script>
 <BODY>
 <CENTER><img src="A太郎の探求サイト デザイン 4-1.png" width="500" height="100"></CENTER>
 </BODY>
